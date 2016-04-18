@@ -1,11 +1,22 @@
 Rails.application.routes.draw do
   mount Shoppe::Engine => "/shoppe"
   devise_for :users
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+
+  #
+  # Product browising
+  #
+  get 'products' => 'products#categories', :as => 'catalogue'
+  get 'products/filter' => 'products#filter', :as => 'product_filter'
+  get 'products/:category_id' => 'products#index', :as => 'products'
+  get 'products/:category_id/:product_id' => 'products#show', :as => 'product'
+  post 'products/:category_id/:product_id/buy' => 'products#add_to_basket', :as => 'buy_product'
+
+
+  get ':action', :controller => 'pages', :as => 'page'
 
   # You can have the root of your site routed with "root"
-  root 'home#index'
+  # root 'home#index'
+  root :to => 'pages#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

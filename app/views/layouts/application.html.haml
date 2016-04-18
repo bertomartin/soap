@@ -7,6 +7,10 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
+    =render 'shared/header'
+    .container.l-container
+      .row
+        .col-md-12
+          =flash_messages
     = yield
+    =render 'shared/footer'

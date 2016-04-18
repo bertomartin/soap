@@ -1,0 +1,15 @@
+%header.l-header
+  %nav.navbar.navbar-fixed-top.header-bg
+    .container
+      .navbar-header
+        %button.navbar-toggler.hidden-sm-up{:type => "button", :"data-toggle" => "collapse", :"data-target"=>"#niche-nav"}
+          ☰
+        -# %a.navbar-brand{:href => "#"} Niche
+      #niche-nav.collapse.navbar-collapse.navbar-toggleable-xs
+        %ul.nav.navbar-nav
+          %li.nav-item.active
+            =link_to "Home", root_path
+          %li.nav-item
+            =link_to "Soaps", "/"
+          %li.nav-item
+            =link_to "FAQ", "/faqs"

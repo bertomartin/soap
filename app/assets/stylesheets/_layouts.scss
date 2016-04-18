@@ -1,0 +1,27 @@
+.l-header {
+  margin-bottom: 4rem;
+}
+
+.l-container {
+  width: 900px;
+}
+
+.l-footer {
+  padding: 1rem 0;
+  margin-top: 2rem;
+  font-size: 85%;
+  // background-color: #f7f7f7;
+  text-align:center;
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-nav {
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+        text-align: center;
+    }
+}
